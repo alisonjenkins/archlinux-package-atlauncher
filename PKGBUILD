@@ -12,16 +12,26 @@ provides=('atlauncher')
 
 install='atlauncher.install'
 
-source=("http://www.atlauncher.com/downloadfile.php?file=jar"
-        "")
+source=("ATLauncher.jar"
+        "atlauncher"
+        "atlauncher.desktop"
+        "atlauncher.png"
+        "LICENSE")
 
-md5sums=()
+md5sums=('09f9bf049806ba21a4c3712bad73d9ab'
+        '9dcb29afaab4ac7f2a391c82ca893e3f'
+        'bb6c25c948b8d2341a27803c123df453'
+        '8ab8a70ca8c7dbff0dc23bec40a5a923'
+        '5367190077e12a7f55403d531ef3998e')
+
 
 package() {
     cd "$srcdir"
+    mkdir -p "${pkgdir}/usr/share/atlauncher/"
+    chmod -R 777 "${pkgdir}/usr/share/atlauncher/"
 
     install -D -m755 "${srcdir}/atlauncher"         "${pkgdir}/usr/bin/atlauncher"
-    install -D -m644 "${srcdir}/ATLauncher.jar"     "${pkgdir}/usr/share/atlauncher/ATLauncher.jar"
+    install -D -m666 "${srcdir}/ATLauncher.jar"     "${pkgdir}/usr/share/atlauncher/ATLauncher.jar"
 
     # Desktop launcher with icon
     install -D -m644 "${srcdir}/atlauncher.desktop" "${pkgdir}/usr/share/applications/atlauncher.desktop"
