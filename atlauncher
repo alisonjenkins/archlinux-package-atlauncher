@@ -6,4 +6,5 @@ unset XMODIFIERS GTK_IM_MODULE QT_IM_MODULE
 mkdir -p ${HOME}/.local/share/atlauncher
 cd ${HOME}/.local/share/atlauncher
 ln -sf /usr/share/atlauncher/Downloads ${HOME}/.local/share/atlauncher/Downloads
-exec java -jar /usr/share/java/atlauncher/ATLauncher.jar $@ >/dev/null
+cp /usr/share/java/atlauncher/ATLauncher.jar .
+exec java -jar ATLauncher.jar $@ >/dev/null
