@@ -1,4 +1,4 @@
-= Package now being updated and stored in AUR4! =
+# Package now being updated and stored in AUR4!
 This git repo will no longer be updated after the transition to AUR4.
 
 Please go to the AUR page for details on how to check out the code: https://aur.archlinux.org/packages/atlauncher
